@@ -2,8 +2,6 @@ package problems10to19.problem11;
 
 import java.util.Random;
 
-import problems10to19.problem10.LineByLineSolution;
-import problems10to19.problem10.TravellingMatrixSolution;
 import util.Solution;
 
 public class Problem11 {

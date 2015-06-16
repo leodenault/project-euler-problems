@@ -1,4 +1,4 @@
-package problems10to19.problem10;
+package problems10to19.problem11;
 
 import util.Solution;
 
