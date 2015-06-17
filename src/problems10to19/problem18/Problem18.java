@@ -1,5 +1,7 @@
 package problems10to19.problem18;
 
+import util.triangleSum.TriangleSum;
+
 public class Problem18 {
 	private static final int[][] TRIANGLE = new int[][] {
 			new int[] { 75, },
@@ -20,33 +22,7 @@ public class Problem18 {
 	};
 	
 	public static void main(String[] args) {
-		int[][] sums = new int[TRIANGLE.length][];
-		for (int i = 0; i < sums.length; i++) {
-			sums[i] = new int[i + 1];
-		}
-		
-		for (int j = 0; j < sums.length; j++) {
-			for (int k = 0; k < sums[j].length; k++) {
-				sums[j][k] = Math.max(leftParentSum(sums, j, k), rightParentSum(sums, j, k)) + TRIANGLE[j][k];
-				System.out.print(sums[j][k] + " ");
-			}
-			System.out.println();
-		}
-		
-		int max = 0;
-		for (int l = 0; l < sums[sums.length - 1].length; l++) {
-			if (max < sums[sums.length - 1][l]) {
-				max = sums[sums.length - 1][l];
-			}
-		}
-		System.out.println(max);
-	}
-	
-	private static int leftParentSum(int[][] sums, int row, int col) {
-		return row > 0 && col > 0 ? sums[row - 1][col - 1] : 0;
-	}
-	
-	private static int rightParentSum(int[][] sums, int row, int col) {
-		return row > 0 && col < row ? sums[row - 1][col] : 0;
+		TriangleSum triangleSum = new TriangleSum(TRIANGLE);
+		System.out.println(triangleSum.solve());
 	}
 }
