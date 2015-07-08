@@ -58,6 +58,7 @@ public class UtilTest {
 		assertThat(Util.divisors(10), is(Arrays.asList(1, 2, 5, 10)));
 		assertThat(Util.divisors(15), is(Arrays.asList(1, 3, 5, 15)));
 		assertThat(Util.divisors(20), is(Arrays.asList(1, 2, 4, 5, 10, 20)));
+		assertThat(Util.divisors(25), is(Arrays.asList(1, 5, 25)));
 		assertThat(Util.divisors(32), is(Arrays.asList(1, 2, 4, 8, 16, 32)));
 	}
 }

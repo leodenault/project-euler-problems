@@ -58,12 +58,19 @@ public class Util {
 	public static List<Integer> divisors(int number) {
 		LinkedList<Integer> divisors1 = new LinkedList<Integer>();
 		LinkedList<Integer> divisors2 = new LinkedList<Integer>();
-		for (int i = 1; i < Math.sqrt(number); i++) {
+		double sqrt = Math.sqrt(number);
+		
+		for (int i = 1; i < sqrt; i++) {
 			if (number % i == 0) {
 				divisors1.add(i);
 				divisors2.add(0, number / i);
 			}
 		}
+		
+		if (sqrt % 1 == 0) {
+			divisors1.add((int)sqrt);
+		}
+		
 		divisors1.addAll(divisors2);
 		return divisors1;
 	}
